@@ -30,7 +30,7 @@ description: 다이소대본 스킬. JUU_PICK 채널용 다이소 스타일 쇼�
    - 제목과 조회수 목록만 가져온다. 자막/설명을 가져오다 "Sign in to confirm you're not a bot"가 뜨면 **우회하지 말고** 멈춘 뒤, 사용자에게 영상 파일 업로드를 요청한다.
    - 네트워크가 막히면(403) 환경 허용 호스트에 `www.youtube.com`이 있는지 확인한다.
    - 지난 분석 결과는 `references/channel-patterns.md`에 있다. 새로 조사하면 이 파일을 갱신한다.
-2. **링밥닷컴**에서 같은 제품이나 비슷한 제품을 찾아 최근 유행하는 다이소 대본 문구와 소구점을 뽑는다. 사이트 주소는 `references/channel-patterns.md`의 "링밥닷컴" 항목을 본다. 비어 있으면 사용자에게 주소를 묻고 기록한다.
+2. **링밥닷컴**(https://ringbob.com)에서 같은 제품이나 비슷한 제품의 최근 다이소 대본 문구와 소구점을 뽑는다. 로그인이 필요한 사이트라 직접 들어가지 않는다. 사용자에게 링밥 검색 결과 스크린샷이나 복사한 문구를 받아서 분석한다 (자세한 내용은 `references/channel-patterns.md`의 "링밥닷컴" 항목).
 3. **사용자가 올린 영상**은 ffmpeg로 장면 모음 이미지를 만들어 본다.
    - `ffmpeg -i in.mp4 -vf "fps=16/<길이>,scale=240:-1,tile=8x2" -frames:v 1 sheet.jpg`
    - 첫 3초는 `-t 3 -vf "fps=2,scale=270:-1,tile=6x1"`로 따로 본다.
